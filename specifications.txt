@@ -1,0 +1,27 @@
+Based on the https://www.jeyausten.com/ website
+
+In the nav bar include: Projects, Resume, Get in Touch
+
+Homepage has my name large on the left (main font)
+Under my name in smaller text is my about me
+
+Next part of the page is a pannel with the three most recents of my work (using image placeholder and loren ipsum description for now) with a read more under each pannel that locates to a full page where i can put more information about that project
+Under 3 most recent projects, inclde a see more button to lead to a page with short description boxes to click to read more about each of my projects
+
+Have a Who is Me? Pannel with a placeholder for a picture of me on the left of the description, and a get in touch button that leads to my contact page
+
+At the end, include a blog sort of thing where I can put articles about myself
+
+A contact section with my name, email, school email, phone number, address
+
+Follow along at the bottom of the page where you can click to get my linkedIn and GitHub
+
+
+
+Details:
+Edges are not rounded.
+Images have a 3px border.
+Colors: 700000, 0F4210, #666, and similar shades that work well (although make it easy for me to change later)
+either Urbanist font or something strong and fancy, and times new roman (although make it easy for me to change later)
+Favor a black background with white text
+I want the website to be clean and easy to modify
