@@ -36,8 +36,6 @@ if (contactForm) {
         // For now, we'll just log it and show an alert
         console.log('Form submitted:', formData);
 
-        alert('Thank you for your message! I will get back to you soon.');
-
         // Reset the form
         contactForm.reset();
     });
