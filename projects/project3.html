@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
+
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar">
@@ -25,48 +27,193 @@
     <!-- Project Content -->
     <section class="project-detail">
         <div class="container">
-            <h1 class="section-title">Project Title Three</h1>
+            <h1 class="section-title">Project HUMAN</h1>
 
-            <div class="project-full-image">
-                <img src="../images/placeholder-project3.jpg" alt="Project 3">
+            <style>
+                /* Banner container: 80% width, 35% height of viewport */
+                .banner-collage {
+                    width: 80vw;
+                    height: 35vh;
+                    display: grid;
+                    grid-template-columns: 2fr 1fr;
+                    grid-template-rows: 1fr 1fr;
+                    gap: 8px;
+                    background: #111;
+                    padding: 8px;
+                    box-sizing: border-box;
+                    overflow: hidden;
+                }
+
+                /* Main large image (left side, spanning two rows) */
+                .banner-main {
+                    grid-row: 1 / 3;
+                    grid-column: 1 / 2;
+                    position: relative;
+                    overflow: hidden;
+                }
+
+                /* Smaller images (right side, stacked) */
+                .banner-side {
+                    position: relative;
+                    overflow: hidden;
+                }
+
+                .banner-collage img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    display: block;
+                }
+
+                /* Optional overlay text styling */
+                .overlay-text {
+                    position: absolute;
+                    bottom: 10px;
+                    left: 12px;
+                    color: #fff;
+                    font-size: 1.1rem;
+                    font-weight: 600;
+                    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+                }
+            </style>
+
+            <div class="banner-collage">
+                <!-- Main large image -->
+                <div class="banner-main">
+                    <img src="/images/Projects/Human/humans.png" alt="Main banner image" />
+                    <div class="overlay-text">Project HUMAN</div>
+                </div>
+
+                <!-- Top-right small image -->
+                <div class="banner-side">
+                    <img src="/images/Projects/Human/human.jpg" alt="Side image 1" />
+                </div>
+
+                <!-- Bottom-right small image -->
+                <div class="banner-side">
+                    <img src="/images/Projects/Human/Blanket.jpeg" alt="Side image 2" />
+                </div>
             </div>
 
             <div class="project-content">
                 <h2>Project Overview</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    It was my first year at the University of Virginia, and I had been looking forward to
+                    getting to meet more people from the computer science department. That was when I came
+                    accross a flyer that stated that read "HUMAN" across the front. I decided to look further into
+                    what the project was about. That was how I learned that Panagiotis Apostolellis from the CS
+                    department
+                    was looking for students to help researchs ways that we could use technology to bring people
+                    together.
+                    This seemed like the perfect opportunity not only to get involved in research, but to also use
+                    technology
+                    in a way to directly apply it to my own situation in a new environment.
                 </p>
 
                 <h2>Technologies Used</h2>
                 <ul>
-                    <li>Swift</li>
-                    <li>iOS Development</li>
-                    <li>Firebase</li>
-                    <li>SwiftUI</li>
+                    <li>SCRUM methodology</li>
+                    <li>Project planning</li>
+                    <li>Trello boards</li>
+                    <li>Figma designing</li>
                 </ul>
 
-                <h2>Challenges & Solutions</h2>
+                <h2>Description</h2>
                 <p>
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum.
+                    Our first meeting invitation came out near the end of September. I don’t believe any of us knew for
+                    sure what we had signed up for. I packed my gray backpack with my laptop, notebooks, pencils, and
+                    waterbottle, and waited at Rice Hall for our ride to come. Shortly after my arrival, a girl in a
+                    black Honda pulled up to the side of the building, and I timidly asked as a freshman might before
+                    heading into a random vehicle for a completely ambiguous event whether she was the driver for
+                    Project HUMAN.
                 </p>
+                <div class="article-content">
+                    <figure class="float-image">
+                        <img src="/images/Projects/Human/owl.jpeg" alt="Descriptive alt text">
+                        <figcaption>Owl statue from our hiking adventure at Ragged Mountain, Virginia</figcaption>
+                    </figure>
 
-                <h2>Results</h2>
-                <p>
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                    laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-                    architecto beatae vitae dicta sunt explicabo.
-                </p>
-
-                <div class="project-links">
-                    <a href="#" class="btn-primary">View Live Demo</a>
-                    <a href="#" class="btn-primary">View on GitHub</a>
+                    <p>
+                        After about 20 minutes in the car, we pulled up to a grassy area with makeshift soccer goals,
+                        and a large picnic blanket with Greek pastries sprawled across. The professor came over and
+                        introduced himself. In total, there were about 10 other students ranging from first years like
+                        myself to grad students who were there to learn more about this mystery project.
+                        <br><br>We started off the session with some team building exercises where we had to work in
+                        groups of 2 or 3 to act out scenarios, tell each other stories, and compete in games such as
+                        soccer. It was an untraditional but rewarding experience.
+                    </p>
                 </div>
+                <div class="article-content">
+                    <figure class="float-image-left">
+                        <img src="/images/Projects/Human/retreat.jpeg" alt="Descriptive alt text">
+                        <figcaption>Balcony view of the office where we discussed our takeaways from the project
+                        </figcaption>
+                    </figure>
 
-                <a href="../projects.html" class="read-more">← Back to Projects</a>
+                    <p>
+                        At the end of the semester, the professor invited all of the participants to stay over at a
+                        retreat on a lake to discuss our takeaways from the past few months. One the first day, he led
+                        us down a dirt path to a room carved into the side of a hill. This was a tech-free day where we
+                        were left to journal and illustrate our own belief of our values, individual stories, and what
+                        made us who we are.
+                    </p>
+                </div>
+                <p>
+                    Back at the retreat, the professor prompted each of us to come up with our own design for a type of
+                    technology that would help to build the same kind of connection for others that our experiences over
+                    the course of the project had done for us. This led to the design of an artifact that would later be
+                    known as Anthropo, a plush animal with a microphone embedded in one eye which allows for those
+                    holding it to record themselves talking about their day, stories, and experiences. The artifact
+                    could then be mailed to different people from around the world allowing their stories to spread
+                    without the necessity for digital devices.
+
+                </p>
+
+                <style>
+                    .image-grid {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 16px;
+                        max-width: 850px;
+                        margin: 0 auto;
+                    }
+
+                    .image-item {
+                        text-align: center;
+                        font-family: Arial, sans-serif;
+                    }
+
+                    .image-item img {
+                        width: 100%;
+                        object-fit: cover;
+                        height: 45vh;
+                    }
+
+                    .caption {
+                        margin-top: 8px;
+                        font-size: 14px;
+                        color: #444;
+                    }
+                </style>
+                </head>
+
+                <body>
+                    <div class="image-grid">
+                        <div class="image-item"> <img src="/images/Projects/Human/anthropo_storyboard.jpeg" alt="Placeholder 1">
+                            <div class="caption">Values exploration activity that we did on day 2 while staying at the retreat; we worked in teams to invent a fictional character, their backstory, and what shaped their values, then we had to answer questions in a way that our character would answer them</div>
+                        </div>
+                        <div class="image-item"> <img src="/images/Projects/Human/personal_notes.png" alt="Placeholder 2">
+                            <div class="caption">Journal entry from activity while staying in the tech free room in the side of the hill while at the retreat, we were prompted to write a brief description of the values that we expressed during our journey</div>
+                        </div>
+                        <div class="image-item"> <img src="/images/Projects/Human/anthropo_cake.png" alt="Placeholder 3">
+                            <div class="caption">Attempt 1/2 of the Anthropo microphone pal prototype with a GoPro placed in the eye to record stories from the person holding the artifact</div>
+                        </div>
+                        <div class="image-item"> <img src="/images/Projects/Human/anthropo_dog.jpeg" alt="Placeholder 4">
+                            <div class="caption">Prototype 2/2 for the Anthropo artifact with a GoPro camera in the eye of the plush toy, and plastic screen covering the camera lense</div>
+                        </div>
+                    </div>
+
+                    <a href="../projects.html" class="read-more">← Back to Projects</a>
             </div>
         </div>
     </section>
@@ -84,4 +231,5 @@
 
     <script src="../js/main.js"></script>
 </body>
+
 </html>

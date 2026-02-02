@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
+
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar">
@@ -25,36 +27,366 @@
     <!-- Project Content -->
     <section class="project-detail">
         <div class="container">
-            <h1 class="section-title">Project Title One</h1>
+            <h1 class="section-title">ReWear Collective</h1>
 
             <div class="project-full-image">
-                <img src="../images/SWE_images/PNG image 2.png" alt="Project 1">
+                <img src="/images/Projects/SWE/tops.png" alt="Project 1">
+                <figcaption class="image-caption">
+                    Screenshot from ReWear Collective website
+                </figcaption>
             </div>
 
             <div class="project-content">
                 <h2>Project Overview</h2>
                 <p>
-                    During the fall 2025 semester, I got the opportunity to work with a team in a software engineering class to create a website to help with a sustainability issue.  Our team chose to build a website for borrowing and lending clothes using the Django framework and Amazon Web Services (AWS).
+                    During the fall 2025 semester, worked with a team of students in a software engineering class to
+                    create a website to address a topic in the issue of sustainability. Our team chose to build a
+                    website for borrowing and lending clothes using the Django framework and Amazon Web Services (AWS).
                 </p>
                 <p>
-                    Our website has the capability of allowing users to checkout and list clothing items in real time, leave reviews on items, and message renters based on the quality of their products with the goal to promote sustainability across college campuses while appealing to students reusable fashion.
+                    Our website has the capability of allowing users to checkout and list clothing items in real time,
+                    leave reviews on items, and message renters based on the quality of their products with the goal to
+                    promote sustainability across college campuses while appealing to students reusable fashion.
                 </p>
                 </p>
 
                 <h2>Skills Used</h2>
                 <ul>
                     <li>HTML5 & CSS3</li>
-                    <li>JavaScript</li>
-                    <li>Node.js</li>
-                    <li>React</li>
+                    <li>Python</li>
                     <li>Amazon Web Services</li>
                     <li>Django Framework</li>
                 </ul>
+                <h2>Development Process</h2>
+                <p>
+                    The process took place over the course of 4 months broken up into 6 different sprints.
+                </p>
+                <p>
+                    Before <b>sprint 1</b>, our team had to write up a proposal to the Software Engineering director
+                    to get approval for our project based on the guidelines of the class to ensure that
+                    our project would efficiently fall into the category of sustainability,
+                </p>
+                <p>
+                    For <b>sprint 2</b>, we had to further describe the intended outcome of our SWE project by
+                    interviewing
+                    students at the university (our target users) about features that they most wanted to see in our
+                    application.
+                    During this time, I also worked alongside our Scrum Master to create a mockup of how the website
+                    should look upon completion.
+                </p>
+                <p>
+                    <b>Sprint 3</b> is when we actually began coding parts of our website starting with the Google Login
+                    feature.
+                    The biggest challenge up to this point had been team communication and determining who would handle
+                    which parts of the functionality
+                    of the website. We ended up having to meet a couple times during the week despite everyones busy
+                    schedules in order to re-organize tasks
+                    for each team member of the team.
+                </p>
+                <p>
+                    During <b>sprint 4</b>, we were now in the depth of the building process for our website.
+                    Communication with the Scrum Master started to
+                    fade, so I had to ask to carry on the role temporarily while they continued to work to reorganize
+                    their plan. One of the main features that
+                    we completed during this sprint was the ability to have messages stored in a database so that users
+                    could send messages to each other, and have
+                    these messages stored.
+                </p>
+                <p>
+                    <b>Sprint 5</b> focused more on finalizing the design of our project. At this point, most of our
+                    website was at the final stage with a few
+                    places for improvement such as stylizing the message box and allowing users to report and leave
+                    reviews on on users
+                    posts. During this stage, I primarily worked on the CSS aspect, making sure that button were at a
+                    decent scale, and that the color scheme
+                    matched the Scrum Masters design on Figma.
+                </p>
+                <p>
+                    <b>Sprint 6</b> included the Beta Testing process. We surveyed a total of 17 students at UVA, and
+                    interviewed 8 about their
+                    experience while using our application. During this process, we came across a number of issues
+                    including users that were posting
+                    innapproriate content in the feed and in direct messaging to other users, and some issues from users
+                    who wanted to be able to see
+                    and leave reviews for content. Due to the amount of feedback received, our team decided to create a
+                    prioritization chart to track
+                    which parts of the feedback would be most addressable before the end of the sprint.
+                </p>
 
-                <!--<div class="project-links">
-                    <a href="#" class="btn-primary">View Live Demo</a>
-                    <a href="#" class="btn-primary">View on GitHub</a>
-                </div>-->
+
+                <!DOCTYPE html>
+                <html lang="en">
+
+                <head>
+                    <meta charset="UTF-8" />
+                    <title>Image Slideshow with Captions</title>
+                    <style>
+                        * {
+                            box-sizing: border-box;
+                            margin: 0;
+                            padding: 0;
+                            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+                        }
+
+                        .slideshow-container {
+                            position: relative;
+                            max-width: 700px;
+                            width: 100%;
+                            overflow: hidden;
+                            justify-content: center;
+                            align-items: center;
+                            margin:0 auto;
+                            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+                            background: #020617;
+                        }
+
+                        .slide {
+                            display: none;
+                            position: relative;
+                            animation: fade 0.6s ease-in-out;
+                        }
+
+                        .slide img {
+                            width: 100%;
+                            display: block;
+                            height: 420px;
+                            object-fit: cover;
+                        }
+
+                        .caption {
+                            position: absolute;
+                            bottom: 0;
+                            width: 100%;
+                            padding: 14px 18px;
+                            background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent);
+                            color: #f9fafb;
+                            font-size: 0.95rem;
+                            letter-spacing: 0.02em;
+                        }
+
+                        .caption-title {
+                            font-weight: 600;
+                            margin-bottom: 4px;
+                        }
+
+                        .caption-text {
+                            font-weight: 400;
+                            opacity: 0.9;
+                        }
+
+                        .prev,
+                        .next {
+                            cursor: pointer;
+                            position: absolute;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            padding: 10px 14px;
+                            color: #e5e7eb;
+                            font-weight: 600;
+                            font-size: 18px;
+                            border-radius: 999px;
+                            user-select: none;
+                            background: rgba(15, 23, 42, 0.7);
+                            border: 1px solid rgba(148, 163, 184, 0.4);
+                            backdrop-filter: blur(6px);
+                            transition: background 0.2s, transform 0.15s, box-shadow 0.15s;
+                        }
+
+                        .prev:hover,
+                        .next:hover {
+                            background: rgba(0, 0, 0, 0.9);
+                            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.7);
+                            transform: translateY(-50%) translateY(-1px);
+                        }
+
+                        .prev {
+                            left: 12px;
+                        }
+
+                        .next {
+                            right: 12px;
+                        }
+
+                        .dots {
+                            text-align: center;
+                            padding: 12px 0 10px;
+                            background: black;
+                        }
+
+                        .dot {
+                            cursor: pointer;
+                            height: 10px;
+                            width: 10px;
+                            margin: 0 4px;
+                            background-color: #4b5563;
+                            border-radius: 50%;
+                            display: inline-block;
+                            transition: background-color 0.25s, transform 0.15s;
+                        }
+
+                        .dot.active {
+                            background-color: #700000;
+                            transform: scale(1.2);
+                        }
+
+                        @keyframes fade {
+                            from {
+                                opacity: 0;
+                                transform: scale(1.01);
+                            }
+
+                            to {
+                                opacity: 1;
+                                transform: scale(1);
+                            }
+                        }
+
+                        @media (max-width: 600px) {
+                            .slide img {
+                                height: 260px;
+                            }
+
+                            .caption {
+                                font-size: 0.85rem;
+                                padding: 10px 12px;
+                            }
+
+                            .prev,
+                            .next {
+                                padding: 8px 10px;
+                                font-size: 16px;
+                            }
+                        }
+                    </style>
+                </head>
+
+                <body>
+
+                    <div class="slideshow-container">
+
+                        <!-- Slide 1 -->
+                        <div class="slide">
+                            <img src="/images/Projects/SWE/tops.png" alt="Mountain landscape" />
+                            <div class="caption">
+                                <div class="caption-title">User Feed Page</div>
+                                <div class="caption-text">Acts as a home page where users can scroll to find content
+                                    that may interest them</div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="slide">
+                            <img src="/images/Projects/SWE/rewear_message.png" alt="City at night" />
+                            <div class="caption">
+                                <div class="caption-title">Messaging Page</div>
+                                <div class="caption-text">A clean version of the message page where users can contact
+                                    clients or borrowers</div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="slide">
+                            <img src="/images/Projects/SWE/admin.png" alt="Forest path" />
+                            <div class="caption">
+                                <div class="caption-title">Admin Pannel</div>
+                                <div class="caption-text">The screen that users logged in as admin see which allows them
+                                    to view all user data and to review/remove users or their content</div>
+                            </div>
+                        </div>
+
+                        <!-- Navigation arrows -->
+                        <a class="prev">&#10094;</a>
+                        <a class="next">&#10095;</a>
+
+                    </div>
+
+                    <!-- Dots -->
+                    <div class="dots">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+
+                    <script>
+                        // Basic slideshow logic
+                        let slideIndex = 0;
+                        const slides = document.querySelectorAll(".slide");
+                        const dots = document.querySelectorAll(".dot");
+                        const prev = document.querySelector(".prev");
+                        const next = document.querySelector(".next");
+
+                        function showSlide(index) {
+                            if (index >= slides.length) slideIndex = 0;
+                            if (index < 0) slideIndex = slides.length - 1;
+
+                            slides.forEach((slide, i) => {
+                                slide.style.display = i === slideIndex ? "block" : "none";
+                            });
+
+                            dots.forEach((dot, i) => {
+                                dot.classList.toggle("active", i === slideIndex);
+                            });
+                        }
+
+                        function nextSlide() {
+                            slideIndex++;
+                            showSlide(slideIndex);
+                        }
+
+                        function prevSlide() {
+                            slideIndex--;
+                            showSlide(slideIndex);
+                        }
+
+                        // Initial display
+                        showSlide(slideIndex);
+
+                        // Arrow events
+                        next.addEventListener("click", nextSlide);
+                        prev.addEventListener("click", prevSlide);
+
+                        // Dot navigation
+                        dots.forEach((dot, i) => {
+                            dot.addEventListener("click", () => {
+                                slideIndex = i;
+                                showSlide(slideIndex);
+                            });
+                        });
+
+                        // Optional: auto-play (comment out if you don't want it)
+                        let autoPlay = true;
+                        let intervalTime = 30000; // 5 seconds
+                        let slideTimer = null;
+
+                        function startAutoPlay() {
+                            if (autoPlay) {
+                                slideTimer = setInterval(() => {
+                                    nextSlide();
+                                }, intervalTime);
+                            }
+                        }
+
+                        function stopAutoPlay() {
+                            if (slideTimer) clearInterval(slideTimer);
+                        }
+
+                        // Start auto-play
+                        startAutoPlay();
+
+                        // Pause on hover
+                        const container = document.querySelector(".slideshow-container");
+                        container.addEventListener("mouseenter", stopAutoPlay);
+                        container.addEventListener("mouseleave", startAutoPlay);
+                    </script>
+                </body>
+
+                </html>
+
+
+                <div class="project-links">
+                    <!--<a href="#" class="btn-primary">View Live Demo</a>-->
+                    <a href="https://github.com/uva-cs3240-f25/project-b-01" class="btn-primary">View on GitHub</a>
+                </div>
 
                 <a href="../projects.html" class="read-more">← Back to Projects</a>
             </div>
@@ -74,4 +406,5 @@
 
     <script src="../js/main.js"></script>
 </body>
+
 </html>

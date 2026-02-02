@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Title Two - Your Name</title>
+    <title>Eye to Eye Project</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&display=swap" rel="stylesheet">
@@ -25,26 +25,98 @@
     <!-- Project Content -->
     <section class="project-detail">
         <div class="container">
-            <h1 class="section-title">Project Title Two</h1>
+            <h1 class="section-title">Eye to Eye Project</h1>
 
-            <div class="project-full-image">
-                <img src="../images/placeholder-project2.jpg" alt="Project 2">
+            <style>
+                /* Banner container: 80% width, 35% height of viewport */
+                .banner-collage {
+                    width: 80vw;
+                    height: 35vh;
+                    display: grid;
+                    grid-template-columns: 2fr 1fr;
+                    grid-template-rows: 1fr 1fr;
+                    gap: 8px;
+                    background: #111;
+                    padding: 8px;
+                    box-sizing: border-box;
+                    overflow: hidden;
+                }
+
+                /* Main large image (left side, spanning two rows) */
+                .banner-main {
+                    grid-row: 1 / 3;
+                    grid-column: 1 / 2;
+                    position: relative;
+                    overflow: hidden;
+                }
+
+                /* Smaller images (right side, stacked) */
+                .banner-side {
+                    position: relative;
+                    overflow: hidden;
+                }
+
+                .banner-collage img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    display: block;
+                }
+
+                /* Optional overlay text styling */
+                .overlay-text {
+                    position: absolute;
+                    bottom: 10px;
+                    left: 12px;
+                    color: #fff;
+                    font-size: 1.1rem;
+                    font-weight: 600;
+                    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+                }
+            </style>
+            <div class="banner-collage">
+                <!-- Main large image -->
+                <div class="banner-main">
+                    <img src="/images/Projects/Pandemic/dramatic_eyes.png" alt="Main banner image" />
+                    <div class="overlay-text">IEEE Pandemic Challenge</div>
+                </div>
+
+                <!-- Top-right small image -->
+                <div class="banner-side">
+                    <img src="/images/Projects/Pandemic/nn_image.png" alt="Side image 1" />
+                </div>
+
+                <!-- Bottom-right small image -->
+                <div class="banner-side">
+                    <img src="/images/Projects/Pandemic/eye_tracking.png" alt="Side image 2" />
+                </div>
             </div>
 
             <div class="project-content">
                 <h2>Project Overview</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    During the pandemic lockdown in 2020, IEEE hosted a challenge where students could
+                    work together to design and build solutions to problems that came up as a result of the Covid_19 pandemic.
+                      For this project, I worked on building an eye tracking software to simulate authentic eye contact during video conferences.
+                </p>
+                <p>
+                    The process of building this project took place over the course of a couple years during which I had the opportunity to work with 
+                    engineers from IEEE and to learn about various kinds of software, image detection techniques, and machine learning algorithms.  This 
+                    project would become the inspiration for me to further pursue software engineering in years to come.
                 </p>
 
                 <h2>Technologies Used</h2>
+                <p> 
+                    Throughout this project, I got to learn about a lot of different computer languages, object detection techniques, machine learning libraries, and algorithms used for object detection.  Below are some of the kinds of technology that were used.
+                </p>
                 <ul>
                     <li>Python</li>
-                    <li>Django</li>
-                    <li>PostgreSQL</li>
-                    <li>Docker</li>
+                    <li>Java</li>
+                    <li>JavaScript</li>
+                    <li>OpenCV Library</li>
+                    <li>Haar Cascades</li>
+                    <li>Numpy arrays</li>
+                    <li>SQL Databases</li>
                 </ul>
 
                 <h2>Challenges & Solutions</h2>
@@ -62,8 +134,7 @@
                 </p>
 
                 <div class="project-links">
-                    <a href="#" class="btn-primary">View Live Demo</a>
-                    <a href="#" class="btn-primary">View on GitHub</a>
+                    <a href="https://github.com/Ferret-Dragon/Eye_to_Eye" class="btn-primary">View on GitHub</a>
                 </div>
 
                 <a href="../projects.html" class="read-more">← Back to Projects</a>

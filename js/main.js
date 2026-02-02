@@ -18,28 +18,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Contact form handling
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
 
-        // Get form data
-        const formData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            subject: document.getElementById('subject')?.value || 'No subject',
-            message: document.getElementById('message').value
-        };
-
-        // Here you would typically send the form data to a server
-        // For now, we'll just log it and show an alert
-        console.log('Form submitted:', formData);
-
-        // Reset the form
-        contactForm.reset();
-    });
-}
 
 // Add active state to navigation links based on current page
 const currentLocation = window.location.pathname;
