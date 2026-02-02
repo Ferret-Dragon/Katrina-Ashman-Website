@@ -2,7 +2,7 @@
 
 A clean, modern personal website built with HTML, CSS, and JavaScript. Designed to be easy to customize and maintain.
 
-Visit website here: https://ferret-dragon.github.io/Katrina-Ashman-Website/projects/project1.html
+Visit website here: https://ferret-dragon.github.io/Katrina-Ashman-Website/index.html
 
 ## Features
 
