@@ -2,6 +2,8 @@
 
 A clean, modern personal website built with HTML, CSS, and JavaScript. Designed to be easy to customize and maintain.
 
+Visit website here: https://ferret-dragon.github.io/Katrina-Ashman-Website/projects/project1.html
+
 ## Features
 
 - **Black background with white text** for a modern, professional look
