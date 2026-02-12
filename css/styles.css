@@ -869,3 +869,15 @@ section {
         font-size: 0.95rem;
     }
 }
+
+/* Creditation */
+.site-credit {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.site-credit a {
+    text-decoration: underline;
+}
+
