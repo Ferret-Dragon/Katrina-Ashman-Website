@@ -684,7 +684,7 @@ section {
 }
 
 .contact-details a {
-    color: var(--secondary-color);
+    color: white;
 }
 
 .contact-details a:hover {
