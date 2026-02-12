@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
+
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar">
@@ -93,21 +95,28 @@
             </div>
 
             <div class="project-content">
-                <h2>Project Overview</h2>
+                <h2>Eye to Eye Project Background</h2>
                 <p>
-                    During the pandemic lockdown in 2020, IEEE hosted a challenge where students could
-                    work together to design and build solutions to problems that came up as a result of the Covid_19 pandemic.
-                      For this project, I worked on building an eye tracking software to simulate authentic eye contact during video conferences.
+                    I began developing the Eye to Eye project as a sophomore in high school in 2021. The initial concept
+                    proposed solving the problem of maintaining eye contact during video calls through a hardware-based
+                    approach using one-way mirrors to redirect a user’s gaze toward their camera. While this design had
+                    the potential to be effective, it relied on specialized equipment that would not be readily
+                    available to most users. I therefore chose to pursue a software-based solution that could be easily
+                    adopted by everyday video conferencing users.
                 </p>
                 <p>
-                    The process of building this project took place over the course of a couple years during which I had the opportunity to work with 
-                    engineers from IEEE and to learn about various kinds of software, image detection techniques, and machine learning algorithms.  This 
-                    project would become the inspiration for me to further pursue software engineering in years to come.
+                    At the time, my programming experience was primarily in Java, JavaScript, HTML, and CSS. My initial
+                    approach was to leverage these technologies to build a system that would detect a user’s eyes
+                    through their webcam, isolate the eye regions, and overlay replicated eye images onto the user’s
+                    full-face video feed. The goal was to apply image warping techniques similar to fisheye distortion
+                    to create the illusion that the user was maintaining direct eye contact with the camera.
                 </p>
 
                 <h2>Technologies Used</h2>
-                <p> 
-                    Throughout this project, I got to learn about a lot of different computer languages, object detection techniques, machine learning libraries, and algorithms used for object detection.  Below are some of the kinds of technology that were used.
+                <p>
+                    Throughout this project, I got to learn about a lot of different computer languages, object
+                    detection techniques, machine learning libraries, and algorithms used for object detection. Below
+                    are some of the kinds of technology that were used.
                 </p>
                 <ul>
                     <li>Python</li>
@@ -119,10 +128,147 @@
                     <li>SQL Databases</li>
                 </ul>
 
-                <h2>Project Process</h2>
+                <h2>Early Research and Prototype Development</h2>
                 <p>
-                    I started working on the Eye to Eye project in 2021.  At the time, 
+                    While researching methods for real-time face tracking, I discovered an article on <a
+                        href="https://medium.com/analytics-vidhya/creating-snapchat-like-filters-from-scratch-using-computer-vision-techniques-6374cde6a7db">The
+                        Medium</a> that demonstrated how to create Snapchat-style filters using computer vision
+                    techniques. This resource introduced me to the fundamentals of capturing and processing live video
+                    feeds. Following this tutorial required extensive self-study, as many of the underlying computer
+                    vision concepts were new to me.
                 </p>
+                <p>
+                    During this phase, I relied heavily on adapting and extending examples from tutorials, combined with
+                    prior experience manipulating visual elements in web development. I experimented with reshaping
+                    video feed regions, adjusting color channels, and dynamically positioning overlay elements. These
+                    experiments allowed me to develop a prototype capable of capturing eye-region video feeds and
+                    overlaying them onto the user’s face.
+                </p>
+                <p>However, the overlay rendering introduced performance challenges. Real-time processing created
+                    noticeable latency, causing the eye overlays to drift or appear detached from the user’s face during
+                    rapid head movement. Recognizing that this level of instability would limit real-world usability, I
+                    began researching more robust eye-tracking methods. </p>
+                <figure class="intext-img">
+                    <img src="../images/Projects/Pandemic/funny_eyes.png" alt="Descriptive alt text">
+                    <figcaption>Original eye tracking results; Left: The first attempt at fisheye warp, Right: The eye
+                        overlays (highlighted yellow)</figcaption>
+                </figure>
+
+                <h2>Transition to Advanced Computer Vision Techniques</h2>
+                <p>
+                    While exploring more reliable tracking algorithms, I discovered that many advanced computer vision
+                    and gaze-tracking implementations were developed using Python. Although I had no prior experience
+                    with Python at the time, I chose to expand my skill set and transitioned the project into a
+                    Python-based implementation.
+                </p>
+                <p>
+                    During this transition, I received mentorship from the host of the Richmond division of the Pandemic
+                    Challenge, who helped guide my learning of Python and introduced me to additional computer vision
+                    techniques and libraries.
+                </p>
+                <p>
+                    One of the earliest Python-based iterations of the project utilized <a
+                        href="https://medium.com/@utkrisht14/face-detection-using-haar-cascade-algorithm-267751b43240">Haar
+                        Cascade classifiers</a> implemented through the OpenCV library. Haar Cascades use supervised
+                    machine learning to detect visual features by applying cascaded classifiers trained on positive and
+                    negative image samples. In this implementation, the algorithm scanned each frame of the webcam feed
+                    using sliding detection windows to identify facial regions and eye locations. Once detected, the
+                    system extracted regions of interest (ROIs) corresponding to the eyes, which could then be processed
+                    for tracking and visualization.
+                </p>
+
+                <h2>Haar Cascade Eye Detection Implementation</h2>
+                <p>
+                    Haar Cascades operate by identifying patterns of contrast within an image using a collection of
+                    simple rectangular feature detectors. These features measure differences in pixel intensity between
+                    adjacent regions, allowing the algorithm to recognize patterns which are commonly found in human
+                    faces and eyes.
+                </p>
+                <p>
+                    Each Haar feature consists of adjacent rectangular regions. The algorithm subtracts the summed pixel
+                    intensities of one region from another. For example, eye regions typically contain darker areas
+                    (pupil and eyelashes) surrounded by lighter skin tones. Haar features use this predictable contrast
+                    pattern to identify facial features from the surrounding background.
+                </p>
+                <figure class="intext-img">
+                    <img src="../images/Projects/Pandemic/faced.jpeg" alt="Descriptive alt text">
+                    <figcaption>Original eye tracking results; Left: The first attempt at fisheye warp, Right: The eye
+                        overlays (highlighted yellow)</figcaption>
+                </figure>
+                <h2>Cascaded Classification Structure</h2>
+                <p>Instead of applying all detection features at once, Haar Cascades use a multi-stage filtering process
+                    known as a <b>cascade of classifiers</b>. Each stage acts as a quick rejection filter that
+                    determines
+                    whether a given region of the image could contain the target object.</p>
+                <p>The cascade operates as follows:</p>
+                <ul>
+                    <li>The algorithm scans the image using a sliding detection window.</li>
+                    <li>The first stage applies a small number of simple features to eliminate obvious non-face regions.
+                    </li>
+                    <li>Regions that pass the first stage are passed to more involved classification stages.</li>
+                    <li>If a region successfully passes all stages, it is classified as containing the target feature
+                        (such as an eye or face).</li>
+                </ul>
+                <p>This staged approach allows the algorithm to discard most irrelevant regions early, dramatically
+                    improving performance while maintaining detection accuracy.</p>
+                <h2>Sliding Window Detection</h2>
+                <p>To locate facial features within each webcam frame, the Haar Cascade classifier applies a sliding
+                    window across the image at multiple scales. This process allows the algorithm to detect objects of
+                    varying sizes depending on the user’s distance from the camera.</p>
+                <p>At each window position, the classifier evaluates whether the region contains a face or eye. If the
+                    classifier produces a positive detection, the algorithm records the coordinates of that region as a
+                    bounding box.</p>
+
+                <figure class="intext-img">
+                    <img src="../images/Projects/Pandemic/happy_rectangles.jpeg" alt="Descriptive alt text">
+                    <figcaption>Rectangle regions used to indicate patterns that the algorithm uses to identify 
+                        possible facial feature in the image such as darker patterns where the eyes are located, 
+                        and lighter areas along the nose</figcaption>
+                </figure>
+                <h2>Region of Interest Extraction</h2>
+                <p>Once facial and eye regions were detected, the system extracted these areas as <b>Regions of Interest
+                        (ROIs)</b>. These ROIs isolated only the relevant portions of the video feed containing the
+                    user’s eyes. The ROIs were then to be processed separately for overlay placement and image
+                    manipulation.</p>
+                <p>This would enable the project to isolate eye movement data from the rest of the face, which was
+                    necessary for later gaze simulation techniques.</p>
+                <h2>Training Image Development for Detection</h2>
+                <p>To improve detection performance and tailor the model to the specific use cases, we imported a
+                    dataset of training images containing thousands of face images to determine what parameters returned
+                    the most accurate results. The code used for training and testing the detection pipeline is publicly
+                    available <a href="https://github.com/Ferret-Dragon/TrainingImages">here.</a></p>
+                <p>The training dataset consists of two primary categories:</p>
+                <ul>
+                    <li><b>Positive Images:</b> Images containing clearly visible faces that the detector should
+                        recognize. These images include variations in lighting, orientation, facial expression, and
+                        partial occlusion to increase generalization capability.</li>
+                    <li><b>Negative Images:</b> Images that do not contain faces. These are used to train the classifier
+                        to distinguish facial features from background textures and non-face objects.</li>
+                </ul>
+                <h2>Limitations Encountered</h2>
+                <p>Despite their speed and simplicity, the Haar Cascades presented several limitations that affected
+                    tracking reliability and complexity even after tuning the parameters:</p>
+
+                <b>Sensitivity to Lighting Conditions</b>
+                <p>Variations in brightness or shadowing often caused inconsistent detection results, particularly
+                    around the eye region.</p>
+                <b>Limited Rotation Tolerance</b>
+                <p>The classifier performed best when the user faced the camera directly. Head tilting or rotation
+                    frequently caused detection failure.</p>
+
+                <h2>Impact on Project Development</h2>
+                <p>Although Haar Cascades allowed the Eye to Eye project to achieve its first working eye detection
+                    prototype, the limitations in positional stability and environmental robustness made it clear that
+                    more advanced tracking methods would be necessary for a production-ready solution.</p>
+                <p>This project has been one of the most influential experiences in my technical
+                    development. From this, I have learned so much about different programming
+                    languages, explored machine learning and computer vision techniques through both independent and collaborative Research. 
+                    Seeing how machine learning models and real-time image
+                    processing can be combined to solve human-centered communication challenges significantly shaped my
+                    academic and professional interests. This experience helped to inspire my passion for computer
+                    visualization and reinforced my desire to pursue future opportunities focused on developing and
+                    applying computer vision technologies to create accessible and innovative experiences.</p>
+
 
                 <div class="project-links">
                     <a href="https://github.com/Ferret-Dragon/Eye_to_Eye" class="btn-primary">View on GitHub</a>
@@ -138,7 +284,8 @@
         <div class="container">
             <h3 class="footer-title">Follow Along</h3>
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/katrina-ashman-1570b3228/" target="_blank" class="social-link">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/katrina-ashman-1570b3228/" target="_blank"
+                    class="social-link">LinkedIn</a>
                 <a href="https://github.com/Ferret-Dragon" target="_blank" class="social-link">GitHub</a>
             </div>
         </div>
@@ -146,4 +293,5 @@
 
     <script src="../js/main.js"></script>
 </body>
+
 </html>
