@@ -299,8 +299,9 @@ section {
 }
 
 .see-more-container {
-    text-align: center;
-    margin-top: var(--spacing-xl);
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 /* ===================================
